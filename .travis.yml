@@ -1,10 +1,11 @@
-language: generic
 sudo: required
-  services:
-    - docker
+language: generic
+
+services:
+  - docker
 
 before_install:
-  - docker build -t dilshad-cp/docker-react -f Dockerfile.dev .
+  - docker build -t dilshadcp/docker-react -f Dockerfile.dev .
 
 script:
- - docker run -e CI=true dilshad-cp/docker-react npm run test -- --coverage
+  - docker run -e CI=true dilshadcp/docker-react npm run test
